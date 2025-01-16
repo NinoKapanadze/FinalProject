@@ -7,9 +7,9 @@ import getProductsAsync from "../services/api.js"
 function Home() {
 
   const [searchQuery, setSearchQuery] = useState("")
-
   const [products, setProducts] = useState([])
   const [showAll, setShowAll] = useState(false);
+
   const handleShowMore = () => {
     setShowAll(true);
   }
@@ -35,7 +35,6 @@ function Home() {
 
 
   const handleSearch = () => {
-    e.preventDefault()
   }
 
   const handleClear = () => {
