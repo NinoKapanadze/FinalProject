@@ -19,11 +19,11 @@ function Login() {
       setError("Email and Password are required.");
       return;
     }
-    setError(""); 
+    setError("");
 
     if (email === "nino2000kapanadze@gmail.com" && password === "12345678") {
-      login(); 
-      navigate("/"); 
+      login();
+      navigate("/");
     } else {
       setError("Invalid email or password.");
     }
@@ -41,7 +41,7 @@ function Login() {
             type="email"
             placeholder="Email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)} 
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="input">
@@ -50,7 +50,7 @@ function Login() {
             type="password"
             placeholder="Password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)} 
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         {/* {error && <div className="error">{error}</div>}*/}
