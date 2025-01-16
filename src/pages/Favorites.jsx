@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import "../css/Favorite.css";
 import ProductCard from "../components/ProductCard";

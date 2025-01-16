@@ -10,8 +10,9 @@ function Home() {
 
   const [products, setProducts] = useState([])
   const [showAll, setShowAll] = useState(false);
-  const handleShowMore = () => { setShowAll(true); 
-  }  
+  const handleShowMore = () => {
+    setShowAll(true);
+  }
   // const [error, setError] = UseState(null)
   //const [loading, setLoading] = useState(true)
 
@@ -36,9 +37,15 @@ function Home() {
   const handleSearch = () => {
     e.preventDefault()
   }
+
+  const handleClear = () => {
+    setSearchQuery(""); 
+    setShowAll(false); 
+  };
+  
   const filteredProducts = products
-  .filter(product => product.title.toLowerCase().startsWith(searchQuery)) 
-  .slice(0, showAll ? products.length : 20);
+    .filter(product => product.title.toLowerCase().startsWith(searchQuery))
+    .slice(0, showAll ? products.length : 20);
 
   return <div className="home">
     <div onSubmit={handleSearch} className="search-box">
@@ -50,16 +57,21 @@ function Home() {
         onChange={(e) => setSearchQuery(e.target.value)}>
       </input>
       <button type="submit" className="search-button">Search</button>
-      <button type="submit" className="clear-button">Clear</button>
-
+      <button
+        type="button"
+        className="clear-button"
+        onClick={handleClear}
+      >
+        Clear
+      </button>
     </div>
     <div className="product-list">
-        {filteredProducts.map((product) => (
-          <ProductCard product={product} key={product.id} />
-        ))}
-      </div>
+      {filteredProducts.map((product) => (
+        <ProductCard product={product} key={product.id} />
+      ))}
+    </div>
     {!showAll && products.length > 20 && (
-    <div className="show-more-btn" onClick={handleShowMore}>show more</div>)}
+      <div className="show-more-btn" onClick={handleShowMore}>show more</div>)}
   </div>
 }
 

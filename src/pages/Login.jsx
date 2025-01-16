@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext.jsx";
-
 import emailIcon from "../assets/email.png";
 import passwordIcon from "../assets/password.png";
 import "../css/Login.css";
@@ -53,7 +52,6 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        {/* {error && <div className="error">{error}</div>}*/}
         <button className="submit" onClick={handleLogin}>
           Login
         </button>
