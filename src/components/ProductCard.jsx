@@ -12,7 +12,7 @@ function ProductCard({ product }) {
     favorites.push(id);
     localStorage.setItem("favorites", JSON.stringify(favorites));
 
-    alert(`${title} added to basket!`);   
+    alert(`${title} added to favorites!`);   
   }
 
   return <div className="product-card">
